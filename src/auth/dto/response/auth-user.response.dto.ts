@@ -1,5 +1,6 @@
 import { ApiProperty } from "@nestjs/swagger";
-import { IsString } from "class-validator";
+import { Type } from "class-transformer";
+import { IsString, ValidateNested } from "class-validator";
 import { UserResponseDto } from "src/users/dto/response/user-response.dto";
 
 export class AuthUserResponseDto {  
@@ -14,5 +15,7 @@ export class AuthUserResponseDto {
         description: 'Usuario',
         type: UserResponseDto,
     })
+    @ValidateNested()
+    @Type(() => UserResponseDto)
     user: UserResponseDto;
 }

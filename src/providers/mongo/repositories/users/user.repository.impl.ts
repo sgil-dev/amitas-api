@@ -19,4 +19,8 @@ export class UserRepository implements UserRepositoryInterface {
     async findByEmail(email: string): Promise<User | null> {
         return this.userModel.findOne({ email }).lean();
     }
+
+    async findById(id: string): Promise<User | null> {
+        return this.userModel.findById(id).lean();
+    }
 }

@@ -6,6 +6,7 @@ import { MongoProviderModule } from 'src/providers/mongo/mongo-provider.module';
 import { mongoConfig } from 'src/providers/config/mongo.config';
 import { MongooseModule } from '@nestjs/mongoose';
 import { AuthModule } from './auth/auth.module';
+import { GroupModule } from './group/group.module';
 
 @Module({
   imports: [
@@ -13,6 +14,7 @@ import { AuthModule } from './auth/auth.module';
     UsersModule,
     MongoProviderModule,
     AuthModule,
+    GroupModule,
   ],
   controllers: [AppController],
   providers: [AppService],
