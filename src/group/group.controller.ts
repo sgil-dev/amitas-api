@@ -31,7 +31,6 @@ export class GroupController {
     @UseGuards(JwtAuthGuard)
     @Post()
     async createGroup(@Body() dto: CreateGroupDto, @Req() req: RequestWithUser): Promise<Group> {
-        console.log(req.user);
         return this.groupService.createGroup(dto, req.user);
     }
 
